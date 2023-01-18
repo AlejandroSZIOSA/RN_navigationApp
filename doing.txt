@@ -1,2 +1,25 @@
 -Creating a screen component
 -Create custom components
+-Using Props
+-This make a grid :)
+ <FlatList 
+      data={CATEGORIES} 
+      keyExtractor={(item) => item.id}
+      renderItem=  {renderCategoryItem}  
+      numColumns={2} // here
+    />
+- <Pressable> use android_ripple={{color:'#ccc'}}property
+-overflow:Platform.OS === 'android' ? 'hidden': 'visible'
+- <View style={[styles.gridItem,{backgroundColor:color}]}>
+-  <View style={[styles.innerContainer,{backgroundColor:color}]}>
+- <Pressable 
+    android_ripple={{color:'#ccc'}} 
+    style={({pressed}) => [styles.button, pressed? styles.buttonPressed : null,
+    ]}
+>
+- in app.json add "backgroundColor": "24180f",
+-   <> //using statusbar 
+          <StatusBar style = 'light'/>
+          <CategoriesScreen/>
+    </>
+-

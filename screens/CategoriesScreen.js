@@ -4,15 +4,25 @@ import CategoryGridTile from "../components/CategoryGridTile";
 
 import { CATEGORIES } from "../data/dummy-data";
 
-function renderCategoryItem(itemData){
-    return( 
-    <CategoryGridTile 
-      title={itemData.item.title}
-      color={itemData.item.color}  
-    />
-    )
-}
-function CategoriesScreen(){
+
+//destructing = ? a prop 
+//Nested functions
+//navigation is the navigation component
+function CategoriesScreen({navigation}){
+  function renderCategoryItem(itemData){
+    //Initiate the navigation
+    function pressHandler(){
+      //Passing Prop object as params in the navigation
+      navigation.navigate('MealsOverview',{categoryId: itemData.item.id});
+    }
+      return( 
+      <CategoryGridTile 
+        title={itemData.item.title}
+        color={itemData.item.color} 
+        myOnPress={pressHandler} // sending a function as Prop
+      />
+      )
+  }
     return( 
     <FlatList 
       data={CATEGORIES} 

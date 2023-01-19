@@ -2,7 +2,7 @@
 class Meal {
   constructor(
     id,
-    categoryIds,
+    categoryIds, //is an array
     title,
     affordability,
     complexity,

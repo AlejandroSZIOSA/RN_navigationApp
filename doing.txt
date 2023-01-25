@@ -43,4 +43,10 @@
 
 -Navigation passing objects as params (there is a navigation hook)
 - "route" is a part of stack.screen so It can be used as param (there is a route hook)
--
+
+-Day 3
+
+-creating an Object with many Props and using inside a component . 
+Because there are so many props
+
+ <MealItem {...mealItemProps}

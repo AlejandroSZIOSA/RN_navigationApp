@@ -12,9 +12,21 @@ function MealsOverviewScreen({route}){
         return mealItem.categoryIds.indexOf(catId) >=0;
     } );
     function renderMealItem(itemData){
+        const item = itemData.item; //conecting a variable to an object :)
+        // An helper object :) using this syntax inside a component as Props
+        const mealItemProps ={
+            title: item.title,
+            imageUrl: item.imageUrl,
+            affordability: item.affordability,
+            complexity: item.complexity,
+            duration: item.duration
+        };
+
+        // Imagenes
         return(
-            <MealItem title={itemData.item.title}/> //passin data prop
-        )
+            <MealItem {...mealItemProps}
+            /> //Passing data prop . a new way :) because there are very much propps
+        );
     }
     return(
         <View style={styles.container}>

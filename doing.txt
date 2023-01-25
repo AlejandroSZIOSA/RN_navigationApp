@@ -50,3 +50,5 @@
 Because there are so many props
 
  <MealItem {...mealItemProps}
+ -Ripple efect on android and opacity efect on IOS :)
+ -Shadows 

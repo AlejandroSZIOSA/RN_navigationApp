@@ -16,16 +16,33 @@ export default function App() {
     <>  
       <StatusBar style = 'dark'/>
        <NavigationContainer>
-        <Stack.Navigator>
-          {/* this create a navigation screen :)*/}
+        {/* Setting defaults navigation styles to all regitred screens */}
+        <Stack.Navigator screenOptions={{
+            headerStyle: {backgroundColor:'#351401'},
+            headerTintColor:'white',
+            contentStyle:{backgroundColor:'#3f2f25'} //content background
+        }}>
+          {/* this create a navigation screen
+          navigation can be configurated
+          :)*/}
           <Stack.Screen 
             name="MealsCategories" // id
             component={CategoriesScreen}//conecting to a screen . passing navigation ?
+            options= {{
+              title:'Meals Categories'
+            }}
           />
           {/* a second screen*/}
           <Stack.Screen
             name="MealsOverview"
             component={MealsOverviewScreen}
+            //options as a function dinamic
+            /* options={({route, navigation}) => {
+              const catId = route.params.categoryId;// in MealsOverviewScreen
+              return{
+                title:catId
+              };
+            }} */
           />
 
         </Stack.Navigator>

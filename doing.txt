@@ -52,3 +52,28 @@ Because there are so many props
  <MealItem {...mealItemProps}
  -Ripple efect on android and opacity efect on IOS :)
  -Shadows 
+ 
+ -Day 4 
+
+ -Stack screen = options as object  (se the documentation)
+ <Stack.Screen 
+            name="MealsCategories" // id
+            component={CategoriesScreen}//conecting to a screen . passing navigation ?
+            options= {{
+              title:'Meals'
+            }}
+  />
+  -Default screen options style navigation bar for all screens 
+  <Stack.Navigator screenOptions={{
+            headerStyle: {backgroundColor:'#351401'},
+            headerTintColor:'white',
+            contentStyle:{backgroundColor:'#3f2f25'} //content background
+  }}>
+  - options as function :) 
+  options={({route, navigation}) => {
+              const catId = route.params.categoryId;// in MealsOverviewScreen
+              return{
+                title:catId
+              };
+            }}
+-UseLoyaut ?

@@ -1,4 +1,5 @@
 
+import { useEffect, useLayoutEffect } from "react";
 import { View,StyleSheet,Text,FlatList } from "react-native";
 import { MEALS,CATEGORIES } from "../data/dummy-data"; //import data
 import MealItem from "../components/MealItem";
@@ -11,13 +12,19 @@ function MealsOverviewScreen({route,navigation}){
         //It is true if there is a match
         return mealItem.categoryIds.indexOf(catId) >=0;
     } );
-
+    //UseEfect execute efter the component function
+    // UserLoyautEfect simultanius with the component rendering :)
+    useLayoutEffect(()=> {
     //filter CATEGORIES array list
     const categoryTitle = CATEGORIES.find((category)=>category.id === catId).title;
     
     navigation.setOptions({
-                title:categoryTitle
-            })// navigation options
+            title:categoryTitle
+        })// navigation options
+    },[catId,navigation]);
+
+
+    
     
     function renderMealItem(itemData){
         const item = itemData.item; //conecting a variable to an object :)

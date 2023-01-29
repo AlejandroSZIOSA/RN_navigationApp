@@ -76,4 +76,15 @@ Because there are so many props
                 title:catId
               };
             }}
--UseLoyaut ?
+
+-Usefect fix the warning problem
+useEffect(()=> {
+    //filter CATEGORIES array list
+    const categoryTitle = CATEGORIES.find((category)=>category.id === catId).title;
+    
+    navigation.setOptions({
+            title:categoryTitle
+        })// navigation options
+    },[catId,navigation]);
+
+-UseLoyaut ? render simultanius when component renders :)

@@ -23,13 +23,11 @@ function MealsOverviewScreen({route,navigation}){
         })// navigation options
     },[catId,navigation]);
 
-
-    
-    
     function renderMealItem(itemData){
         const item = itemData.item; //conecting a variable to an object :)
         // An helper object :) using this syntax inside a component as Props
         const mealItemProps ={
+            id:item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             affordability: item.affordability,

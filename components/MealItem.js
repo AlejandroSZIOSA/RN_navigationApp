@@ -1,11 +1,25 @@
 import { View,Text, Pressable,StyleSheet,Image } from "react-native";
-function MealItem({title, imageUrl, duration, complexity,affordability }){
+import { useNavigation } from "@react-navigation/native";
+
+function MealItem({id,title, imageUrl, duration, complexity,affordability }){
+  const navigation = useNavigation(); //Navigation hook
+  
+  // 2- Trigger navigation hook from inside a function
+  function selectMealItemHandler(){
+    /* 1-Conecting the navigation to a stack.screen and usem params
+    Using navigation hook */
+  navigation.navigate('MealDetail',{
+    mealId: id
+  });
+  }
+
+
     return( 
     <View style = {styles.mealItem}>  
         <Pressable 
           android_ripple={{color:'#ccc'}} 
-          style={({pressed}) => (pressed ? styles.buttonPressed : null)
-          }
+          style={({pressed}) => (pressed ? styles.buttonPressed : null)}
+          onPress={selectMealItemHandler}// 3
         >
         <View>
          <View>

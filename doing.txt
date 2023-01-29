@@ -88,3 +88,7 @@ useEffect(()=> {
     },[catId,navigation]);
 
 -UseLoyaut ? render simultanius when component renders :)
+-Day 5
+-useNavigation
+import { useNavigation } from "@react-navigation/native";
+

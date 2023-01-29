@@ -91,4 +91,9 @@ useEffect(()=> {
 -Day 5
 -useNavigation
 import { useNavigation } from "@react-navigation/native";
-
+-styling MealDetailScreen
+-Using a regular list for render Ingredients (This do not need a flatList)
+ <Text> Ingredients </Text>
+        {selectedMeal.ingredients.map(ingredient=> 
+            <Text key={ingredient}> {ingredient}</Text>)}
+-

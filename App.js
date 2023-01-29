@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator(); // a object with two properties
 export default function App() {
   return (
     <>  
-      <StatusBar style = 'dark'/>
+      <StatusBar style = 'light'/>
        <NavigationContainer>
         {/* Setting defaults navigation styles to all regitred screens */}
         <Stack.Navigator screenOptions={{

@@ -96,4 +96,14 @@ import { useNavigation } from "@react-navigation/native";
  <Text> Ingredients </Text>
         {selectedMeal.ingredients.map(ingredient=> 
             <Text key={ingredient}> {ingredient}</Text>)}
--
+-day 6
+-Overraiding styles 
+function MealDetails({duration,complexity,affordability,style, texStyle}){
+    return(
+    <View style={[styles.details,style]}>
+        <Text style={[styles.detailItem,texStyle]}> {duration} m  </Text>
+        <Text style={[styles.detailItem,texStyle]}> {complexity.toUpperCase()} </Text>
+        <Text style={[styles.detailItem,texStyle]}> {affordability.toUpperCase()} </Text>
+    </View>
+- <View> acept borders not <Text>
+-Making reusable cod

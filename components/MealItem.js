@@ -35,7 +35,6 @@ function MealItem({id,title, imageUrl, duration, complexity,affordability }){
           duration={duration} 
           complexity={complexity}
           affordability={affordability} 
-          
           />
         </View>
         </Pressable>

@@ -6,7 +6,6 @@ function List({data}){
             </View>
     ));
 
-
 }
 export default List;
 

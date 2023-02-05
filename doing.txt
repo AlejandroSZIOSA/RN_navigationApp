@@ -137,4 +137,5 @@ useLayoutEffect(() => {
         });
         //adding a dependecies
     },[navigation, headerButtonPressHandler]);
--
+- creating a button component with icons :)
+

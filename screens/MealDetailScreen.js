@@ -1,6 +1,7 @@
 import { useLayoutEffect } from "react";
 import { Text, View,Image,StyleSheet, ScrollView, Button } from "react-native"
 import { Header } from "react-native/Libraries/NewAppScreen";
+import IconButton from "../components/IconButton";
 import List from "../components/MealDetail/List";
 import Subtitle from "../components/MealDetail/Subtitle";
 import MealDetails from "../components/MealDetails";
@@ -18,7 +19,13 @@ function MealDetailScreen({route, navigation}){
     useLayoutEffect(() => { 
         navigation.setOptions({
             headerRight:() => {
-                return <Button title ='Tape me' onPress={headerButtonPressHandler} />
+                return( 
+                <IconButton 
+                  myIcon="star" 
+                  myColor="white" 
+                  myOnpress={headerButtonPressHandler}
+                />
+                )
             }
         });
         //adding a dependecies

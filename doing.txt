@@ -107,3 +107,35 @@ function MealDetails({duration,complexity,affordability,style, texStyle}){
     </View>
 - <View> acept borders not <Text>
 -Making reusable cod
+-day 7 
+-Adding buttom to the navigation bar :) this way do whent do not need direct comunication 
+with a component :)
+ <Stack.Screen 
+            name= "MealDetail" 
+            component={MealDetailScreen}
+            options={{
+              headerRight: () => {
+              return <Text> In the header</Text>
+            }   
+            }} />
+- <Stack.Screen 
+            name= "MealDetail" 
+            component={MealDetailScreen}
+            options={{
+              headerRight: () => {
+              return <Button title ='Tap me!'  />
+            }   
+            }} />
+
+- Add button to navigation bar with more funtionality
+
+useLayoutEffect(() => { 
+        navigation.setOptions({
+            headerRight:() => {
+                return <Button title ='Tape me' onPress={headerButtonPressHandler} />
+            }
+        });
+        //adding a dependecies
+    },[navigation, headerButtonPressHandler]);
+
+-

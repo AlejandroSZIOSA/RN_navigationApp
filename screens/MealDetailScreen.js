@@ -1,12 +1,29 @@
-import { Text, View,Image,StyleSheet, ScrollView } from "react-native"
+import { useLayoutEffect } from "react";
+import { Text, View,Image,StyleSheet, ScrollView, Button } from "react-native"
+import { Header } from "react-native/Libraries/NewAppScreen";
 import List from "../components/MealDetail/List";
 import Subtitle from "../components/MealDetail/Subtitle";
 import MealDetails from "../components/MealDetails";
 import { MEALS } from "../data/dummy-data";
 //route give access to the parent component and a reference
-function MealDetailScreen({route}){
+function MealDetailScreen({route, navigation}){
     const mealId =  route.params.mealId; // this comes from MealsItem
+    
     const selectedMeal = MEALS.find((meal)=> meal.id === mealId );
+    
+    function headerButtonPressHandler(){
+        // here can do whathever you want :)
+        console.log('Pressed!');
+    }
+    useLayoutEffect(() => { 
+        navigation.setOptions({
+            headerRight:() => {
+                return <Button title ='Tape me' onPress={headerButtonPressHandler} />
+            }
+        });
+        //adding a dependecies
+    },[navigation, headerButtonPressHandler]);
+
     return (
     <ScrollView styles={styles.rootContainer}>
         <Image style={styles.image} source={{uri:selectedMeal.imageUrl}}  />

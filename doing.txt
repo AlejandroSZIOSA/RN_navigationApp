@@ -137,5 +137,4 @@ useLayoutEffect(() => {
         });
         //adding a dependecies
     },[navigation, headerButtonPressHandler]);
-
 -
